@@ -355,7 +355,7 @@ npm run build
 ## 🔒 Security Features
 
 ### **Authentication Security**
-- Password hashing with bcrypt (salt rounds: 12)
+- Password hashing with bcrypt (salt rounds: 12).
 - JWT tokens with expiration
 - Refresh token rotation
 - Account lockout after failed attempts
