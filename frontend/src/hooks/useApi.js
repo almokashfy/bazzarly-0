@@ -52,7 +52,8 @@ export const useApi = (apiCall, dependencies = [], options = {}) => {
     if (immediate) {
       execute();
     }
-  }, dependencies);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [immediate, execute, ...dependencies]);
 
   useEffect(() => {
     return () => {

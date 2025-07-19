@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
-  Store, 
   Package, 
   ShoppingCart, 
   BarChart3, 
@@ -14,11 +13,8 @@ import {
   DollarSign,
   Users,
   TrendingUp,
-  Search,
-  Filter
+  Search
 } from 'lucide-react';
-import { useApi } from '../hooks/useApi';
-import { LoadingWrapper, LoadingSpinner } from '../components/Loading';
 
 const StoreManagement = () => {
   const [activeTab, setActiveTab] = useState('overview');

@@ -77,7 +77,7 @@ const AdminDashboard = () => {
       default:
         break;
     }
-  }, [activeTab]);
+  }, [activeTab, fetchUsers, fetchStores, fetchProducts]);
 
   const overview = dashboardData?.data?.overview || {};
   const growth = dashboardData?.data?.growth || {};

@@ -66,7 +66,7 @@ export const validators = {
   },
 
   phone: (value, message = 'Please enter a valid phone number') => {
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    const phoneRegex = /^[+]?[1-9][\d]{0,15}$/;
     if (value && !phoneRegex.test(value.replace(/\s/g, ''))) {
       return message;
     }
@@ -311,7 +311,7 @@ export const sanitize = {
 
   phone: (value) => {
     if (typeof value !== 'string') return '';
-    return value.replace(/[^\d\+\-\s\(\)]/g, '');
+    return value.replace(/[^\d+\-\s()]/g, '');
   },
 };
 
@@ -350,11 +350,13 @@ export const createFormHandler = (schema, onSubmit) => {
   };
 };
 
-export default {
+const validationUtils = {
   validators,
   validationSchemas,
   validateField,
   validateForm,
   sanitize,
   createFormHandler,
-}; 
+};
+
+export default validationUtils; 

@@ -5,16 +5,13 @@ import {
   MapPin, 
   Star, 
   Search, 
-  Filter, 
   Grid, 
   List,
   Award,
   Package,
   Users,
-  Clock,
   TrendingUp
 } from 'lucide-react';
-import { LoadingWrapper, LoadingSpinner } from '../components/Loading';
 
 const StoresPage = () => {
   const [viewMode, setViewMode] = useState('grid');

@@ -6,7 +6,7 @@ import { LoadingWrapper, CategoryGridSkeleton, ProductListSkeleton } from '../co
 
 const HomePage = () => {
   // Fetch data using custom hooks
-  const { data: adsData, loading: adsLoading, error: adsError } = useAds();
+  const { data: adsData } = useAds();
   const { data: categoriesData, loading: categoriesLoading, error: categoriesError } = useCategories();
   const { data: productsData, loading: productsLoading, error: productsError } = useProducts({ limit: 4 });
   const { data: statsData, loading: statsLoading, error: statsError } = useStats();

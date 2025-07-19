@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { 
-  Store, 
   MapPin, 
   Phone, 
   Mail, 
@@ -12,20 +10,16 @@ import {
   Grid, 
   List,
   Search,
-  Filter,
   Heart,
   Share2,
   ShoppingCart,
   Eye,
   Calendar,
   Award,
-  Users,
-  TrendingUp
+  Users
 } from 'lucide-react';
-import { LoadingWrapper, LoadingSpinner } from '../components/Loading';
 
 const StorePage = () => {
-  const { storeSlug } = useParams();
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
