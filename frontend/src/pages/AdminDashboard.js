@@ -9,13 +9,10 @@ import {
   BarChart3,
   PieChart,
   Settings,
-  Shield,
   Eye,
   CheckCircle,
   XCircle,
-  Clock,
-  Search,
-  Filter
+  Search
 } from 'lucide-react';
 import { useApi } from '../hooks/useApi';
 import { LoadingWrapper, LoadingSpinner } from '../components/Loading';

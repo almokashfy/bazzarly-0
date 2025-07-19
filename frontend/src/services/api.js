@@ -32,12 +32,7 @@ api.interceptors.request.use(
 // Response interceptor
 api.interceptors.response.use(
   (response) => {
-    // Log response time in development
-    if (config.ENVIRONMENT === 'development') {
-      const endTime = new Date();
-      const duration = endTime - response.config.metadata.startTime;
-      console.log(`API ${response.config.method?.toUpperCase()} ${response.config.url} - ${duration}ms`);
-    }
+    // API timing removed for production
     
     return response.data;
   },
@@ -48,12 +43,7 @@ api.interceptors.response.use(
     
     // Log errors in development
     if (config.ENVIRONMENT === 'development') {
-      console.error('API Error:', {
-        url: error.config?.url,
-        method: error.config?.method,
-        status: statusCode,
-        message: errorMessage,
-      });
+      // API error logs removed for production
     }
     
     // Handle specific status codes

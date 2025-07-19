@@ -80,25 +80,7 @@ const UserProfile = () => {
     setActiveTab('dashboard'); // Go to seller dashboard tab
   };
 
-  // For testing - toggle between buyer and seller views
-  const handleToggleSellerMode = () => {
-    // In real app, this would come from API/auth context
-    // For demo purposes, we'll toggle the seller state
-    const newIsSeller = !userData.isSeller;
-    
-    setUserData(prev => ({
-      ...prev,
-      isSeller: newIsSeller,
-      canSell: newIsSeller
-    }));
-    
-    // Set appropriate default tab after toggle
-    if (newIsSeller) {
-      setActiveTab('dashboard');
-    } else {
-      setActiveTab('orders');
-    }
-  };
+
 
   return (
     <div className="min-h-screen bg-secondary-50">
@@ -139,14 +121,6 @@ const UserProfile = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              {/* Test Toggle Button - for demo purposes */}
-              <button 
-                onClick={handleToggleSellerMode}
-                className="btn-secondary text-sm border-dashed"
-              >
-                {userData.isSeller ? '👤 Switch to Buyer View' : '🏪 Test Seller View'}
-              </button>
-
               {!userData.canSell && !userData.isSeller && (
                 <button 
                   onClick={handleUpgradeToSeller}
